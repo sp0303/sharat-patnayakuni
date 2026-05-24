@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Rocket, ArrowRight, ShieldCheck, Zap } from 'lucide-react'
+import { Rocket, ArrowRight, ShieldCheck, Zap, Github } from 'lucide-react'
 import profileImg from '../assets/images/sp_cl_coat.webp'
 
 const Hero = () => {
@@ -23,28 +23,34 @@ const Hero = () => {
             
             <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Sharat <br />
-              <span className="text-primary">Patnayakuni</span>
+              <span className="text-primary">Patnaik</span>
+              <span className="sr-only"> Sharat Patnayakuni</span>
             </h1>
             
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-xl">
-              Software Engineer specializing in <span className="text-slate-900 dark:text-white font-semibold">AI & Machine Learning</span>. 
+              <span className="text-slate-900 dark:text-white font-semibold">Independent Developer</span> & AI Specialist. 
               Building intelligent systems and high-performance algorithmic trading engines.
             </p>
 
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <a
                 href="#projects"
-                className="px-8 py-4 rounded-full premium-gradient text-white font-bold flex items-center justify-center space-x-2 glow-hover"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-lg hover:bg-primary dark:hover:bg-primary hover:text-white transition-all duration-300 shadow-xl shadow-slate-200 dark:shadow-none glow-hover flex items-center justify-center space-x-2"
+                title="View showcase of technical projects"
               >
                 <span>View Projects</span>
                 <ArrowRight size={20} />
               </a>
               <a
-                href="#"
-                className="px-8 py-4 rounded-full border-2 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-bold flex items-center justify-center space-x-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+                href="https://github.com/sp0303"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full glass border-white/20 text-slate-900 dark:text-white font-semibold text-lg flex items-center justify-center space-x-2 hover:bg-white/50 dark:hover:bg-white/10 transition-all duration-300"
+                aria-label="Visit Sharat's GitHub profile"
+                title="Browse Source Code on GitHub"
               >
-                <Rocket size={20} className="text-primary" />
-                <span>Trading System</span>
+                <Github size={20} />
+                <span>GitHub</span>
               </a>
             </div>
 

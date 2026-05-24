@@ -15,11 +15,11 @@ const Projects = () => {
               A selection of high-impact engineering projects, from algorithmic trading engines to intelligent APIs.
             </p>
           </div>
-          <motion.div 
+          <motion.div
             whileHover={{ x: 5 }}
             className="mt-6 md:mt-0"
           >
-            <a href="#" className="flex items-center space-x-2 text-primary font-bold group">
+            <a href="https://github.com/sp0303" className="flex items-center space-x-2 text-primary font-bold group">
               <span>View all on GitHub</span>
               <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
@@ -34,11 +34,10 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`p-8 rounded-3xl group transition-all duration-300 ${
-                project.featured 
-                ? 'premium-gradient text-white shadow-2xl md:col-span-2' 
+              className={`p-8 rounded-3xl group transition-all duration-300 ${project.featured
+                ? 'premium-gradient text-white shadow-2xl md:col-span-2'
                 : 'glass glow-hover'
-              }`}
+                }`}
             >
               <div className="flex justify-between items-start mb-6">
                 <div className={`p-3 rounded-2xl ${project.featured ? 'bg-white/20' : 'bg-primary/10'}`}>
@@ -56,7 +55,7 @@ const Projects = () => {
               <h3 className={`text-2xl font-bold mb-3 ${project.featured ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
                 {project.title}
               </h3>
-              
+
               <p className={`mb-8 leading-relaxed ${project.featured ? 'text-white/90' : 'text-slate-600 dark:text-slate-400'}`}>
                 {project.description}
               </p>
@@ -65,11 +64,10 @@ const Projects = () => {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      project.featured 
-                      ? 'bg-white/20 text-white' 
+                    className={`px-3 py-1 text-xs font-semibold rounded-full ${project.featured
+                      ? 'bg-white/20 text-white'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
-                    }`}
+                      }`}
                   >
                     {tag}
                   </span>

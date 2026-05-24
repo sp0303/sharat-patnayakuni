@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import SkillsCarousel from './components/SkillsCarousel'
-import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Expertise from './components/Expertise'
-import Gallery from './components/Gallery'
+import Home from './pages/Home'
+import About from './pages/About'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import ChatAssistant from './components/ChatAssistant'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -22,18 +21,20 @@ function App() {
   const toggleTheme = () => setIsDarkMode(!isDarkMode)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
-      <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <main>
-        <Hero />
-        <SkillsCarousel />
-        <Projects />
-        <Experience />
-        <Expertise />
-        <Gallery />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+        <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+        <ChatAssistant />
+      </div>
+    </Router>
   )
 }
 
